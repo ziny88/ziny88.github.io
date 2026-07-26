@@ -50,9 +50,13 @@
             .calendar {gap:1px; font-size:12.8px;}
             .day {min-height:56px; padding:4px;}
             .day-header {padding:8px 2px; font-size:12px;}
-            .event {
+            .event.color-dot {
+				  display: none;   
+                  }
+			.event {
                     font-size: 9.0px;
-		            padding: 1px 0px;         
+		            padding: 1px 0px;
+	                padding-left: 1px;
 		            margin: 1px -6px;
                   justify-content: flex-start;
                   text-align: left;
@@ -201,7 +205,7 @@
                     e.style.backgroundColor = ev.color || '#e3f2fd';
                     e.style.color = isDarkColor(ev.color || '#4a6bff') ? '#ffffff' : '#000000';
 			        const isMobile = window.innerWidth <= 768;
-			        const displayTitle = isMobile ? ev.title.substring(0, 5) : ev.title.substring(0, 8);
+			        const displayTitle = isMobile ? ev.title.substring(0, 6) : ev.title.substring(0, 10);
                     e.innerHTML = `<span class="color-dot" style="background:${ev.color}"></span><strong>${displayTitle}</strong>`;
                     list.appendChild(e);
                 });
