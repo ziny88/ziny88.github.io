@@ -200,7 +200,8 @@
                     e.className = 'event';
                     e.style.backgroundColor = ev.color || '#e3f2fd';
                     e.style.color = isDarkColor(ev.color || '#4a6bff') ? '#ffffff' : '#000000';
-                    const displayTitle = ev.title.substring(0, 5) ;
+			        const isMobile = window.innerWidth <= 768;
+			        const displayTitle = isMobile ? ev.title.substring(0, 4) : ev.title.substring(0, 8);
                     e.innerHTML = `<span class="color-dot" style="background:${ev.color}"></span><strong>${displayTitle}</strong>`;
                     list.appendChild(e);
                 });
